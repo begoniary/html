@@ -1,0 +1,428 @@
+<html lang="zn-Hans">
+    <head>
+        <meta charset="UTF-8"/>
+        <script type="text/javascript"></script>
+        <link rel="icon" href="ball4.png">
+        <script>
+            var timeoutindex;
+            var index=0;
+            var arr;
+            var mm=0;
+            function go1(){
+                console.log("进入go1");
+                frameAnimation(ele,positions,url);
+                var  audio=new Audio("do.m4a");//路径
+                        audio.play(); 
+            }
+            function go2(){
+                console.log("进入go2");
+                frameAnimation1(ele1,positions,url1);
+                var  audio=new Audio("ri.m4a");//路径
+                        audio.play(); 
+            }
+            function go3(){
+                console.log("进入go3");
+                frameAnimation2(ele2,positions,url2);
+                var  audio=new Audio("mi.m4a");//路径
+                        audio.play(); 
+            }
+            function go4(){
+                console.log("进入go4");
+                frameAnimation3(ele3,positions,url3);
+                var  audio=new Audio("fa.m4a");//路径
+                        audio.play();
+            }
+            function go5(){
+                console.log("进入go5");
+                frameAnimation4(ele4,positions,url4);
+                var  audio=new Audio("so.m4a");//路径
+                        audio.play();
+            }
+            function go6(){
+                console.log("进入go6");
+                frameAnimation5(ele5,positions,url5);
+                var  audio=new Audio("la.m4a");//路径
+                        audio.play();
+            }
+            function go7(){
+                console.log("进入go7");
+                frameAnimation6(ele6,positions,url6);
+                var  audio=new Audio("si.m4a");//路径
+                        audio.play();
+            }
+            function goplay(){
+                if (mm==1)
+                    return;
+                index=0;
+                mm=1;
+                var str = document.getElementById('number').value;
+                arr = str.split(""); 
+                timeoutindex=  setInterval("playmu()",600); 
+            }
+        function playmu(){
+            var asc=arr[index].charCodeAt();
+            asc=asc%7;
+            asc++;
+            eval("go"+asc+"()"); 
+            index++;
+            if(index>=arr.length){
+                index=0;
+                mm=0;
+                clearInterval(timeoutindex);
+            }
+        }
+        function loopPlay(){
+            index=0;
+            var str = document.getElementById('number').value;
+                arr = str.split(""); 
+                for (var i=0;i<str.length;i++){
+                    for (var j=1;j<100;j++){
+                        arr[j*str.length+i]=arr[i]
+                    }
+                }
+                timeoutindex=  setInterval("playmu()",600); 
+        }
+        function gogo(){
+                console.log("进入gogo");
+                var  audio=new Audio("zero.mp3");//路径
+                        audio.play();
+            }
+        function closePlay(){
+            gogo();
+            var str = document.getElementById('number').value;
+            index=101*str.length+1;
+            setTimeout("document.location.reload(true)",1100);
+        }
+        </script>
+    </head>
+
+    <body>
+        <style>
+            .mytxt:focus {
+                    border: 1px solid #fafafa;
+                    -webkit-box-shadow: 0px 0px 6px #007eff;
+                    -moz-box-shadow: 0px 0px 5px #007eff;
+                    box-shadow: 0px 0px 5px #007eff; 
+                    }
+                    .botton {
+                        color: #555;
+                        background-color: rgba(255, 255, 255,0.75);
+                        border-radius: 5px;
+                        font-size: 20px;
+                        transition-property: unset;
+                        padding-top:2px;
+                        padding-right:10px;
+                        padding-bottom:4px;
+                        padding-left:10px;
+                        margin-left:82px;
+                        margin-top:50px;
+                        font-family: "Comic Sans MS", "Courier New", monospace;
+                    }
+                    .botton:hover {
+                        color: rgba(255, 255, 255, 0.8) !important;
+                        border-radius: 5px;
+                        font-size: 20px;
+                        padding-top:2px;
+                        padding-right:10px;
+                        padding-bottom:4px;
+                        padding-left:10px;
+                        margin-left:82px;
+                        margin-top:50px;
+                        font-family: "Comic Sans MS", "Courier New", monospace;
+                        background-color: rgba(0, 0, 0,0.8);
+                    }
+
+            .mytxt {
+                    color:#333;
+                    font-size:20px;
+                    font-family: "Comic Sans MS", "Courier New", monospace;
+                    padding-top:2px;
+                    padding-right:10px;
+                    padding-bottom:4px;
+                    padding-left:10px;
+                    outline-width:medium;
+                    outline-style:none;
+                    outline-color:invert;
+                    border-top-left-radius:5px;
+                    border-top-right-radius:5px;
+                    border-bottom-left-radius:5px;
+                    border-bottom-right-radius:5px;
+                    text-shadow:0px 1px 2px #fff;
+                    background-attachment:scroll;
+                    background-color:rgba(255,255,255,0.75);
+                    margin-left:82px;
+                    margin-top:50px;
+                    border-top-color:#ccc;
+                    border-right-color:#ccc;
+                    border-bottom-color:#ccc;
+                    border-left-color:#ccc;
+                    border-top-width:1px;
+                    border-right-width:1px;
+                    border-bottom-width:1px;
+                    border-left-width:1px;
+                    border-top-style:solid;
+                    border-right-style:solid;
+                    border-bottom-style:solid;
+                    border-left-style:solid;
+                    width:1250px;
+                    height:40px;
+
+                }
+            body {
+                    background:url(1.jpeg);
+                    background-repeat: no-repeat;
+                    background-attachment:fixed;
+                    background-position:100% 50%;
+            }
+            h1 {font-size:80px;font-family: "Comic Sans MS", "Courier New", monospace;text-align:center;}
+            h2 {font-size:30px;font-family: "Comic Sans MS", "Courier New", monospace;}
+            p {font-size:20px;font-family: "Comic Sans MS", "Courier New", monospace;}
+            #idea{
+                color:rgba(88, 82, 82, 0.832);
+                font-size:19px;
+                    font-family: "Comic Sans MS", "Courier New", monospace;
+                    padding-right:10px;
+                    padding-bottom:0px;
+                    padding-left:20px;
+                    outline-width:medium;
+                    outline-style:none;
+                    outline-color:invert;
+                    border-top-left-radius:5px;
+                    border-top-right-radius:5px;
+                    border-bottom-left-radius:5px;
+                    border-bottom-right-radius:5px;
+                    text-shadow:0px 1px 2px #fff;
+                    background-attachment:scroll;
+                    margin-left:152px;
+                    margin-top:-10px;
+                    width:1080px;
+                    height:20px;
+            }
+            #idea2{
+                color:rgb(51, 51, 51);
+                text-shadow:0px 1px 2px #fff;
+                    margin-left:82px;
+                    margin-top:-10px;
+            }
+        </style>
+
+        <title>
+           Music Box
+        </title>
+
+        <h1 style="text-shadow:1px 4px 4px rgb(201, 200, 200);">Begoniary's Music Box</h1>
+        
+        <div id="idea2">
+        <p style="font-size:25px;">If you have no idea, try this</p>
+        </div>
+        <div id="idea">
+            <p >
+             115566544332215544332554433211556654433221<br>
+            </p>
+        </div>
+
+        <div id="idea2">
+            <p style="font-size:25px;">You can also try using English and Chinese, for example</p>
+            </div>
+            <div id="idea">
+                <p >
+                    混沌未分天地乱，茫茫渺渺无人见。自从盘古破鸿蒙，开辟从兹清浊辨。覆载群生仰至仁，发明万物皆成善。<br>
+                </p>
+            </div>
+
+        <div id="rabbit" style="width:120px;height:220px;margin-left:72px;float:left; display:inline"></div> 
+        <script>
+            var url = '2.png';
+            var positions = ['5 -262','-100 -252','5 -262'];
+            var ele = document.getElementById('rabbit');
+            var oTimer = null;
+            frameAnimation(ele,positions,url);
+            function frameAnimation(ele,positions,url){
+                ele.style.backgroundImage = 'url(' + url + ')';
+                ele.style.backgroundRepeat = 'no-repeat'; 
+                var index1 = 0;
+                function run(){
+                    var pos = positions[index1].split(' ');
+                    ele.style.backgroundPosition = pos[0] + 'px ' + pos[1] + 'px';
+                    index1++;
+                    oTimer = setTimeout(run,300);
+                }
+                run();
+            }  
+        </script>
+
+        <div id="rabbit1" style="width:120px;height:220px;margin-left:72px;float:left; display:inline"></div> 
+        <script>
+            var url1 = '3.png';
+            var positions = ['5 -262','-100 -252','5 -262'];
+            var ele1 = document.getElementById('rabbit1');
+            var oTimer = null;
+            frameAnimation1(ele1,positions,url1);
+            function frameAnimation1(ele1,positions,url1){
+                ele1.style.backgroundImage = 'url(' + url1 + ')';
+                ele1.style.backgroundRepeat = 'no-repeat'; 
+                var index1 = 0;
+                function run(){
+                    var pos = positions[index1].split(' ');
+                    ele1.style.backgroundPosition = pos[0] + 'px ' + pos[1] + 'px';
+                    index1++;
+                    oTimer = setTimeout(run,300);
+                }
+                run();
+            }  
+        </script>
+
+        <div id="rabbit2" style="width:120px;height:220px;margin-left:72px;float:left; display:inline"></div> 
+        <script>
+            var url2 = '4.png';
+            var positions = ['5 -262','-100 -252','5 -262'];
+            var ele2 = document.getElementById('rabbit2');
+            var oTimer = null;
+            frameAnimation2(ele2,positions,url2);
+            function frameAnimation2(ele2,positions,url2){
+                ele2.style.backgroundImage = 'url(' + url2 + ')';
+                ele2.style.backgroundRepeat = 'no-repeat'; 
+                var index2 = 0;
+                function run(){
+                    var pos = positions[index2].split(' ');
+                    ele2.style.backgroundPosition = pos[0] + 'px ' + pos[1] + 'px';
+                    index2++;
+                    oTimer = setTimeout(run,300);
+                }
+                run();
+            }  
+        </script>
+
+        <div id="rabbit3" style="width:120px;height:220px;margin-left:72px;float:left; display:inline"></div> 
+        <script>
+            var url3 = '5.png';
+            var positions = ['5 -262','-100 -252','5 -262'];
+            var ele3 = document.getElementById('rabbit3');
+            var oTimer = null;
+            frameAnimation3(ele3,positions,url3);
+            function frameAnimation3(ele3,positions,url3){
+                ele3.style.backgroundImage = 'url(' + url3 + ')';
+                ele3.style.backgroundRepeat = 'no-repeat'; 
+                var index3 = 0;
+                function run(){
+                    var pos = positions[index3].split(' ');
+                    ele3.style.backgroundPosition = pos[0] + 'px ' + pos[1] + 'px';
+                    index3++;
+                    oTimer = setTimeout(run,300);
+                }
+                run();
+            }  
+        </script>
+
+        <div id="rabbit4" style="width:120px;height:220px;margin-left:72px;float:left; display:inline"></div> 
+        <script>
+            var url4 = '6.png';
+            var positions = ['5 -262','-100 -252','5 -262'];
+            var ele4 = document.getElementById('rabbit4');
+            var oTimer = null;
+            frameAnimation4(ele4,positions,url4);
+            function frameAnimation4(ele4,positions,url4){
+                ele4.style.backgroundImage = 'url(' + url4 + ')';
+                ele4.style.backgroundRepeat = 'no-repeat'; 
+                var index4 = 0;
+                function run(){
+                    var pos = positions[index4].split(' ');
+                    ele4.style.backgroundPosition = pos[0] + 'px ' + pos[1] + 'px';
+                    index4++;
+                    oTimer = setTimeout(run,300);
+                }
+                run();
+            }  
+        </script>
+
+        <div id="rabbit5" style="width:120px;height:220px;margin-left:72px;float:left; display:inline"></div> 
+        <script>
+            var url5 = '7.png';
+            var positions = ['5 -262','-100 -252','5 -262'];
+            var ele5 = document.getElementById('rabbit5');
+            var oTimer = null;
+            frameAnimation5(ele5,positions,url5);
+            function frameAnimation5(ele5,positions,url5){
+                ele5.style.backgroundImage = 'url(' + url5 + ')';
+                ele5.style.backgroundRepeat = 'no-repeat'; 
+                var index5 = 0;
+                function run(){
+                    var pos = positions[index5].split(' ');
+                    ele5.style.backgroundPosition = pos[0] + 'px ' + pos[1] + 'px';
+                    index5++;
+                    oTimer = setTimeout(run,300);
+                }
+                run();
+            }  
+        </script>
+
+        <div id="rabbit6" style="width:120px;height:220px;margin-left:72px;float:left; display:inline"></div> 
+        <script>
+            var url6 = '8.png';
+            var positions = ['5 -262','-100 -252','5 -262'];
+            var ele6 = document.getElementById('rabbit6');
+            var oTimer = null;
+            frameAnimation6(ele6,positions,url6);
+            function frameAnimation6(ele6,positions,url6){
+                ele6.style.backgroundImage = 'url(' + url6 + ')';
+                ele6.style.backgroundRepeat = 'no-repeat'; 
+                var index6 = 0;
+                function run(){
+                    var pos = positions[index6].split(' ');
+                    ele6.style.backgroundPosition = pos[0] + 'px ' + pos[1] + 'px';
+                    index6++;
+                    oTimer = setTimeout(run,300);
+                }
+                run();
+            }  
+        </script>
+
+        <input type="text" id="number" placeholder="Type whatever you want here~" class="mytxt" />
+
+        <input type="button" value="Click here to play" class="botton" onclick="goplay()"/>
+
+        <input type="button" value="Click here to loop" class="botton" onclick="loopPlay()"/>
+
+        <input type="button" value="Click here to stop" class="botton" onclick="closePlay()"/>
+
+        </br>
+        </br>
+        </br>
+        <h2 style="text-shadow:0px 2px 2px rgb(240, 238, 238);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Readme</h2>
+        <p style="text-shadow:0px 2px 2px rgb(230, 227, 227);">
+            <style type="text/css">
+                a:link{text-decoration:none;color:rgb(0, 245, 253);}
+                a:hover{text-decoration:none;color:rgb(0, 195, 255);}
+                a:active{text-decoration:none;color:rgb(255, 230, 0);}
+                a:visited{text-decoration:none;color:rgb(255, 115, 0);}
+            </style>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                This is a html homework. The author is Begoniary, who is a freshman in UCAS. I major in Physics and am not good at html programming.
+            </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            You can type whatever you want, including numbers, English words, Chinese words or maybe Mars Language (if you happen to master that).
+            </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            As long as you type your text into the text box above, the music box will produce a piece of music, which is based on the text you provide.
+            </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I got the inspiration from the Detective Conan ( 名探偵コナン ). In which Sherry uses the sound of the flute to send a message to Conan.
+            </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I spent a lot of efford to complet this webpage. Thanks for visiting is webpage. If you want to know more about me, welcome to visit my blog.
+            </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="font-size:30px;"href="http://www.begoniary.com">www.begoniary.com</a>
+        </p>
+        <h2 style="text-shadow:0px 2px 2px rgb(240, 238, 238);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acknowledgement</h2>
+        <p style="text-shadow:0px 2px 2px rgb(230, 227, 227);">
+            <style type="text/css">
+                a:link{text-decoration:none;color:rgb(0, 245, 253);}
+                a:hover{text-decoration:none;color:rgb(0, 195, 255);}
+                a:active{text-decoration:none;color:rgb(255, 230, 0);}
+                a:visited{text-decoration:none;color:rgb(255, 115, 0);}
+            </style>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <b>Li Siyue</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Her Kitty Band gives me some inspiration.
+            </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <b>Tang Yin</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;He gave me some learning materials and helped me to handle a bug.
+            </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <b>Li Zhenying</b>&nbsp;&nbsp;&nbsp;&nbsp;He helped me with learning and gave me some meaningful suggestions.
+        </p>
+    </body>
+    
+</html>
